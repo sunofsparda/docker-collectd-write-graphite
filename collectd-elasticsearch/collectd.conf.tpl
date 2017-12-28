@@ -44,7 +44,6 @@ LoadPlugin write_graphite
   MountPoint "/etc/hosts"
   IgnoreSelected true
   ReportByDevice false
-  ReportReserved true
   ReportInodes true
 </Plugin>
 
@@ -52,7 +51,6 @@ LoadPlugin write_graphite
   Disk "/^[hs]d[a-z]/"
   IgnoreSelected false
 </Plugin>
-
 
 <Plugin interface>
   Interface "lo"
@@ -63,7 +61,7 @@ LoadPlugin write_graphite
 
 
 <Plugin "write_graphite">
- <Carbon>
+ <Node "{{ HOST_NAME }}">
    Host "{{ GRAPHITE_HOST }}"
    Port "{{ GRAPHITE_PORT | default("2003") }}"
    Prefix "{{ GRAPHITE_PREFIX | default("collectd.") }}"
@@ -71,6 +69,7 @@ LoadPlugin write_graphite
    SeparateInstances true
    StoreRates true
    AlwaysAppendDS false
- </Carbon>
+ </Node>
 </Plugin>
 
+Include "/etc/collectd/conf.d/*.conf"

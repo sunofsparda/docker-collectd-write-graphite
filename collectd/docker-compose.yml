@@ -1,0 +1,11 @@
+version: "3"
+services:
+
+  collectd:
+    image: acherlyonok/collectd:0.1
+    environment:
+      HOST_NAME: "{{ HOST_ROLE_NAME }}"
+      GRAPHITE_HOST: "{{ HOST_HIT_MONITOR }}"
+      GRAPHITE_PORT: 2003
+      REPORT_BY_CPU: 'true'
+    restart: unless-stopped

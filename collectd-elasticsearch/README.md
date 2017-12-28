@@ -1,7 +1,11 @@
-collectd-write-graphite
+This container is available at Docker hub: acherlyonok/collectd-elasticsearch
 =======================
 
-Basic collectd-based server monitoring. Sends stats to Graphite.
+Basic collectd-based server monitoring + elasticsearch plugin. Sends stats to Graphite.
+
+Custom configs:
+
+* /etc/collectd/conf.d/*.conf
 
 Collectd metrics:
 
@@ -13,6 +17,7 @@ Collectd metrics:
 * Uptime
 * Network interface
 * Swap
+* Elasticsearch stats (https://github.com/signalfx/collectd-elasticsearch.git)
 
 Environment variables
 ---------------------
@@ -35,3 +40,15 @@ Environment variables
 * `COLLECT_INTERVAL`
   - Collection interval and thus resolution of metrics
   - Optional, defaults to 10
+* `ELASTICSEARCH_HOST`
+  - Elasticsearch host
+  - Required
+* `ELASTICSEARCH_PORT`
+  - Elasticsearch port
+  - Optional, defaults to 9200
+* `ELASTICSEARCH_USER`
+  - Elasticsearch username
+  - Optional, defaults to elastic
+* `ELASTICSEARCH_PASS`
+  - Elasticsearch password
+  - Optional, defaults to changeme
