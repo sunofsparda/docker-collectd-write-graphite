@@ -1,9 +1,8 @@
-FROM acherlyonok/collectd
+FROM acherlyonok/collectd:0.1
 
 RUN apt -y install git
 
-RUN mkdir -p /etc/collectd/conf.d
-ADD 20-elasticsearch.conf.tpl /etc/collectd/conf.d/20-elasticsearch.conf.tpl
+ADD 20-elasticsearch.conf.tpl /etc/collectd/collectd.conf.d/20-elasticsearch.conf.tpl
 
 # install plugins
 ADD plugins.sh /etc/collectd/plugins.sh

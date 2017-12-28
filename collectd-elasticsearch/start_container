@@ -1,6 +1,6 @@
 #!/bin/bash
 
 envtpl /etc/collectd/collectd.conf.tpl
-envtpl /etc/collectd/conf.d/*.tpl
+envtpl /etc/collectd/collectd.conf.d/*.tpl
 
 collectd -f
