@@ -2,10 +2,11 @@ version: "3"
 services:
 
   collectd:
-    image: acherlyonok/collectd:0.1
+    image: acherlyonok/collectd:latest
     environment:
-      HOST_NAME: "{{ HOST_ROLE_NAME }}"
-      GRAPHITE_HOST: "{{ HOST_HIT_MONITOR }}"
+      HOST_NAME: test
+      GRAPHITE_HOST: test
       GRAPHITE_PORT: 2003
       REPORT_BY_CPU: 'true'
+      GRAPHITE_PREFIX: ''
     restart: unless-stopped
