@@ -1,4 +1,4 @@
-FROM acherlyonok/collectd:0.1
+FROM acherlyonok/collectd:latest
 
 RUN apt -y install git
 

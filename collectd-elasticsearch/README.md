@@ -1,4 +1,4 @@
-This container is available at Docker hub: acherlyonok/collectd-elasticsearch
+This container is available at Docker hub: acherlyonok/collectd:0.1e
 =======================
 
 Basic collectd-based server monitoring + elasticsearch plugin. Sends stats to Graphite.
